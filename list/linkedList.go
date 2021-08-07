@@ -26,3 +26,12 @@ func (list *LinkedList) AddToHead(data int) {
 	}
 	list.HeadNode = node
 }
+
+func (list *LinkedList) IterateList() []int {
+	var node *Node
+	var items []int
+	for node = list.HeadNode; node != nil; node = node.nextNode {
+		items = append(items, node.Property)
+	}
+	return items
+}

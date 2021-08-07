@@ -14,4 +14,5 @@ func main() {
 	linkedList.AddToHead(2)
 	head := linkedList.HeadNode
 	fmt.Println(head.Property)
+	fmt.Println(linkedList.IterateList())
 }
