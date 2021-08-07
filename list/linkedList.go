@@ -45,3 +45,13 @@ func (list *LinkedList) GetLastNode() *Node {
 	}
 	return lastNode
 }
+
+func (list *LinkedList) AddToEnd(property int) {
+	var node = &Node{}
+	node.Property = property
+	node.nextNode = nil
+	lastNode := list.GetLastNode()
+	if lastNode != nil {
+		lastNode.nextNode = node
+	}
+}

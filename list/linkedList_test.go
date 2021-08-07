@@ -38,9 +38,27 @@ func TestLinkedList(t *testing.T) {
 			t.Error("Test Failed: inputted ", nil, " expected ", expected, ", recieved ", received)
 		}
 
+		if nil != linkedList.GetLastNode().nextNode {
+			t.Error("Test Failed: inputted ", nil, " expected ", nil, ", recieved ", linkedList.GetLastNode().nextNode)
+		}
+
 		newlinkedList := &LinkedList{}
 		if nil != newlinkedList.GetLastNode() {
 			t.Error("Test Failed: inputted ", nil, " expected ", nil, ", recieved ", newlinkedList.GetLastNode())
+		}
+
+		if nil != linkedList.GetLastNode().nextNode {
+			t.Error("Test Failed: inputted ", nil, " expected ", nil, ", recieved ", linkedList.GetLastNode().nextNode)
+		}
+	})
+
+	t.Run("Test Add to end", func(t *testing.T) {
+		input := 5
+		linkedList.AddToEnd(5)
+		expected := 5
+		received := linkedList.GetLastNode().Property
+		if expected != received {
+			t.Error("Test Failed: inputted ", input, " expected ", expected, ", recieved ", received)
 		}
 	})
 }
