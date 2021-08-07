@@ -35,3 +35,13 @@ func (list *LinkedList) IterateList() []int {
 	}
 	return items
 }
+
+func (list *LinkedList) GetLastNode() *Node {
+	var node, lastNode *Node
+	for node = list.HeadNode; node != nil; node = node.nextNode {
+		if node.nextNode == nil {
+			lastNode = node
+		}
+	}
+	return lastNode
+}

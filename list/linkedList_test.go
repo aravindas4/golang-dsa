@@ -30,4 +30,17 @@ func TestLinkedList(t *testing.T) {
 			t.Error("Test Failed: inputted {}, expected {}, recieved {}", nil, expected, received)
 		}
 	})
+
+	t.Run("Test last node", func(t *testing.T) {
+		expected := 2
+		received := linkedList.GetLastNode().Property
+		if expected != received {
+			t.Error("Test Failed: inputted ", nil, " expected ", expected, ", recieved ", received)
+		}
+
+		newlinkedList := &LinkedList{}
+		if nil != newlinkedList.GetLastNode() {
+			t.Error("Test Failed: inputted ", nil, " expected ", nil, ", recieved ", newlinkedList.GetLastNode())
+		}
+	})
 }
