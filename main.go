@@ -15,4 +15,10 @@ func main() {
 	linkedList.AddToHead(5)
 	linkedList.AddAfter(2, 19)
 	fmt.Println(linkedList.IterateList())
+	var doubleLinkedList list.DoubleLinkedList
+	doubleLinkedList.AddToHead(3)
+	doubleLinkedList.AddToHead(2)
+	doubleLinkedList.AddToHead(1)
+	//node := doubleLinkedList.NodeBetweenValues(3, 1)
+	fmt.Println(doubleLinkedList.IterateList())
 }
