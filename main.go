@@ -10,9 +10,9 @@ func main() {
 
 	// Linked list
 	var linkedList list.LinkedList
-	linkedList.AddToHead(1)
 	linkedList.AddToHead(2)
-	head := linkedList.HeadNode
-	fmt.Println(head.Property)
+	linkedList.AddToHead(3)
+	linkedList.AddToHead(5)
+	linkedList.AddAfter(2, 19)
 	fmt.Println(linkedList.IterateList())
 }

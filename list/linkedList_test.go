@@ -77,4 +77,28 @@ func TestLinkedList(t *testing.T) {
 			t.Error("Test Failed: inputted ", input, " expected ", nil, ", recieved ", received_node)
 		}
 	})
+
+	t.Run("Add node after with value", func(t *testing.T) {
+		input1 := 19
+		input2 := 2
+
+		linkedList.AddAfter(input2, input1)
+		inputs := []int{input2, input1}
+		expected := []int{3, 2, 19, 5}
+		received := linkedList.IterateList()
+		if !reflect.DeepEqual(received, expected) {
+			t.Error("Test Failed: inputted ", inputs, " expected ", expected, ", recieved ", received)
+		}
+
+		input1 = 11
+		input2 = 22
+
+		linkedList.AddAfter(input2, input1)
+		inputs = []int{input2, input1}
+		expected = []int{3, 2, 19, 5}
+		received = linkedList.IterateList()
+		if !reflect.DeepEqual(received, expected) {
+			t.Error("Test Failed: inputted ", inputs, " expected ", expected, ", recieved ", received)
+		}
+	})
 }

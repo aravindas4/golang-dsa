@@ -68,3 +68,16 @@ func (list *LinkedList) NodeWithValue(property int) *Node {
 	}
 	return nodeWith
 }
+
+func (list *LinkedList) AddAfter(nodeProperty int, property int) {
+	var node *Node
+	newNode := &Node{}
+	newNode.Property = property
+
+	node = list.NodeWithValue(nodeProperty)
+	if node != nil {
+		tempNode := node.nextNode
+		node.nextNode = newNode
+		newNode.nextNode = tempNode
+	}
+}
