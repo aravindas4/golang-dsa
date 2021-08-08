@@ -61,4 +61,20 @@ func TestLinkedList(t *testing.T) {
 			t.Error("Test Failed: inputted ", input, " expected ", expected, ", recieved ", received)
 		}
 	})
+
+	t.Run("Get Node with Value", func(t *testing.T) {
+		input := 2
+		expected := 2
+		received := linkedList.NodeWithValue(input).Property
+		if expected != received {
+			t.Error("Test Failed: inputted ", input, " expected ", expected, ", recieved ", received)
+		}
+
+		newlinkedList := &LinkedList{}
+		input = 3
+		received_node := newlinkedList.NodeWithValue(input)
+		if received_node != nil {
+			t.Error("Test Failed: inputted ", input, " expected ", nil, ", recieved ", received_node)
+		}
+	})
 }

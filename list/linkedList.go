@@ -55,3 +55,16 @@ func (list *LinkedList) AddToEnd(property int) {
 		lastNode.nextNode = node
 	}
 }
+
+func (list *LinkedList) NodeWithValue(property int) *Node {
+	var node, nodeWith *Node
+
+	//Iterate
+	for node = list.HeadNode; node != nil; node = node.nextNode {
+		if node.Property == property {
+			nodeWith = node
+			break
+		}
+	}
+	return nodeWith
+}
