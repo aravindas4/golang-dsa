@@ -1,0 +1,25 @@
+name: Test Runner
+
+# Run push on to main
+on:
+    pull_request:
+        branches: [ main ]
+    # push:
+    #     branches: [main]
+
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        strategy:
+            max-parallel: 4
+            matrix:
+                go: ["1.17"]
+        name: Go ${{ matrix.go }}
+        steps:
+            - uses: actions/checkout@v2
+            - name: Setup go
+              uses: actions/setup-go@v1
+              with:
+                go-version: ${{ matrix.go }}
+            - run: go test -v ./... -cover
