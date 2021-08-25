@@ -3,6 +3,6 @@ A code workout pratice for book
 https://github.com/PacktPublishing/Learn-Data-Structures-and-Algorithms-with-Golang
 
 ## Description
-Includes topic wise implementions with testcases
+Includes topic wise Custom implementions with testcases
 
 
